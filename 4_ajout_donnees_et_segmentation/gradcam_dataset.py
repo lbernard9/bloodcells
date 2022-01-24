@@ -49,14 +49,16 @@ def make_gradcam_heatmap(img_array, model, last_conv_layer_name, pred_index=None
     heatmap = tf.maximum(heatmap, 0) / tf.math.reduce_max(heatmap)
     return heatmap.numpy()
 
-def display_headmap(preprocess_function, img_path, model, last_conv_layer_name, pred_index=None):
+def display_headmap(preprocess_function, img_path, model, last_conv_layer_name, pred_index=None, crop_size = None):
     img_array = preprocess_function(img_path)
     heatmap = make_gradcam_heatmap(img_array, model, last_conv_layer_name, pred_index)
-    
-    superimposed_img = get_gradcam(img_path,heatmap)
+    superimposed_img = get_gradcam(img_path,heatmap,crop_size=crop_size)
     
     img = tf.io.read_file(img_path)
     img = tf.io.decode_jpeg(img, channels=3)
+    if crop_size!=None:
+        img = tf.image.resize_with_crop_or_pad(img, crop_size[0], crop_size[1])
+    
     # Display heatmap
     fig,axs = plt.subplots(1,3,figsize=(8,5))
     axs[0].imshow(img)
@@ -68,11 +70,12 @@ def display_headmap(preprocess_function, img_path, model, last_conv_layer_name, 
     plt.show()
 
 
-def get_gradcam(img_path, heatmap, alpha=0.4):
+def get_gradcam(img_path, heatmap, alpha=0.4, crop_size = None):
     # Load the original image
     img = preprocessing.image.load_img(img_path)
     img = preprocessing.image.img_to_array(img)
-
+    if crop_size!=None:
+        img = tf.image.resize_with_crop_or_pad(img, crop_size[0], crop_size[1])
     # Rescale heatmap to a range 0-255
     heatmap = np.uint8(255 * heatmap)
 
