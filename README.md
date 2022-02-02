@@ -31,13 +31,15 @@ Une présentation à travers une application, plus orientée mise en production,
 >
 > Augmentation de données avec Keras
 
-### Analyse approfondie des résultats, segmentation
+### Analyse approfondie des résultats, etude sur les IG
 > Analyse résultats, tests sur nouvelle base d'images
 >
 > Etude sur la problèmatique des cellules de type IG
->
+
+### Ajout de données et segmentation
 > Transfer Learning Tensorflow, Keras avec ajout de données : 30000 images
 >
 > Segmentation OpenCV et modèles de masques, détourage de cellules
 
-
+### Classification de 10 types
+> Ajout des types blast et smudge
