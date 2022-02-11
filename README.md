@@ -1,6 +1,6 @@
-# Projet de classification des cellules sanguines
+# Projet Computer Vision : classification des cellules sanguines
 
-Ce projet a été réalisé durant ma formation Data Scientist chez Datascientest.
+Ce projet a été réalisé durant ma formation Data Scientist chez Datascientest. Rapport : <a href="./Rapport Projet BloodCells.pdf">Rapport</a>
 
 Les différentes étapes ont été réalisées tout au long de la formation. Le projet a donc évolué selon les modules de formations suivis.
 
