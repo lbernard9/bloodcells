@@ -2,13 +2,12 @@
 
 Ce projet a été réalisé durant ma formation Data Scientist chez Datascientest : <a href="./Rapport Projet BloodCells.pdf">Rapport</a>
 
+Support utilisé pour la soutenance du projet : <a href="http://ec2-13-36-239-110.eu-west-3.compute.amazonaws.com/presentation">soutenance</a>
+
 Les différentes étapes ont été réalisées tout au long de la formation. Le projet a donc évolué selon les modules de formations suivis.
 
 Pour un meilleur suivi du projet, le choix a été fait d'utiliser des Notebooks Python. 
 
-La dernière phase du projet est en cours de finalisation.
-
-Une présentation à travers une application, plus orientée mise en production, est en phase de réalisation.
 
 ### Data
 > Cadrage du projet, études des cellules sanguines
